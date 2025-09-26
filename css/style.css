@@ -1,0 +1,607 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-past {
+    background-image: url(../css/images/past\ football.jpg);
+}
+
+.bg-present {
+    background-image: url(../css/images/modern.jpg);
+}
+
+.bg-future {
+    background-image: url(../css/images/future.png);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+/* --- HEADER STYLES --- */
+header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 100;
+    height: 64px;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    background-color: #242424;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+    grid-column:2/3;
+    text-align: center;
+}
+
+.header-text p {
+    font-family: 'Spicy Rice', serif;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: 'Squada One', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.logo-f {
+    color: white;
+}
+
+.logo-e {
+    color: #4CAF50;
+}
+
+header .logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 12px;
+}
+
+.header-text {
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-text p {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-family: 'Squada One', sans-serif;
+}
+
+.header-text span {
+    color: #4CAF50;
+}
+
+/* --- MOBILE HEADER ---*/
+
+.mobile-logo-link {
+    display: none;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+     header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .mobile-logo-link {
+        display: block;
+        
+    }
+
+    .header-text {
+        display: none;
+    }
+
+   
+    body {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .header-text p {
+        font-size: 1.5rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .header-text span {
+        display: block;
+    }
+
+    .sidebar-menu-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        order: 2;
+        background-color: #1a1a1a;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar-menu li {
+        margin: 5px;
+        flex-basis: 45%;
+        height: auto;
+    }
+
+    .sidebar-menu a {
+        padding: 10px;
+        height: auto;
+    }
+
+    .sidebar-menu .title {
+        opacity: 1;
+        transform: none;
+        position: relative;
+    }
+
+    /* MOBILE HOVER STYLES*/
+
+    .sidebar-menu a:hover {
+        background-color: #4CAF50;
+    }
+
+    .sidebar-menu a:hover .title {
+        color: #4CAF50;
+    }
+
+    .sidebar-menu .hover-content {
+        display: none;
+    }
+
+    .main-content-container {
+        margin: 0;
+        order: 1;
+        padding: 20px;
+    }
+
+    .home-sidebar-container {
+        display: none;
+    }
+}
+
+
+
+/* --- SIDEBAR MENU STYLES --- */
+
+.sidebar-menu-container {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    height: calc(100% - 64px);
+    width: 200px;
+    background-color: #242424;
+    overflow: hidden;
+    z-index: 99;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.sidebar-menu li {
+    position: relative;
+    margin: 0 10px 20px;
+}
+
+.sidebar-menu a {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #333;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active-page {
+    background-color: #4CAF50;
+}
+
+.sidebar-menu a > .title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'squada one';
+    color: white;
+    transition: color 0.3s ease;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* STYLES FOR THE IMAGE AND DESCRIPTION CONTENT */
+
+.sidebar-menu .hover-content {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 190px;
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 6px;
+    box-sizing: border-box;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, top 0.4s ease;
+    z-index: 10;
+}
+
+.sidebar-menu .hover-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    margin-bottom: 6px;
+}
+
+.sidebar-menu .hover-content .description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #f0f0f0;
+}
+
+
+.sidebar-menu li:hover .hover-content {
+    opacity: 1;
+    max-height: 600px;
+    top: 105%;
+}
+
+.sidebar-menu a:hover > .title,
+.sidebar-menu .active-page > .title {
+    color: #4CAF50;
+}
+
+
+.sidebar-menu a:hover .title {
+    color: #4CAF50;
+}
+
+
+.home-sidebar-container {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50px;
+    background-color: #fff;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 98;
+    padding: 20px 0;
+}
+
+.home-sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.home-sidebar-menu li {
+    margin: 10px 0;
+}
+
+.home-sidebar-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transition: color 0.3s ease;
+    padding: 5px;
+}
+
+.home-sidebar-menu a:hover {
+    color: #4CAF50;
+}
+
+
+.about-us-item {
+    position: relative;
+    margin: 0 10px 20px;
+}
+
+
+.about-us-item a {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    background-color: #333; 
+    transition: background-color 0.3s ease;
+}
+
+
+.about-us-item a:hover {
+    background-color: #4CAF50;
+}
+
+
+.about-us-item a:hover .title {
+    color: white; 
+
+}
+
+
+.about-us-hover-content {
+    position: absolute;
+    top: 105%; 
+    left: 0;
+    width: 190px; 
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 6px;
+    box-sizing: border-box;
+    opacity: 0;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    z-index: 10;
+    text-align: left; 
+}
+
+
+.about-us-item:hover .about-us-hover-content {
+    opacity: 1;
+    max-height: 600px; 
+}
+
+.about-us-hover-content .about-description {
+    font-size: 0.75rem; 
+    line-height: 1.4; 
+}
+
+@media (max-width: 768px) {
+    .about-us-hover-content {
+        display: none;
+    }
+
+    
+    .about-us-item a {
+        background-color: transparent; 
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .about-us-item a:hover {
+        background-color: transparent;
+    }
+
+    
+    .about-us-item .title {
+        color: white; 
+    }
+}
+
+
+.about-us-item a {
+    pointer-events: none;
+}
+
+
+
+@media (max-width: 768px) {
+   .about-us-item a {
+        pointer-events: auto;
+    }
+
+   
+    .about-us-hover-content {
+        display: none;
+    }
+}
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content-container {
+    margin-top: 64px;
+    margin-left: 200px;
+    margin-right: 50px;
+    min-height: calc(100vh - 64px);
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(26,26,26, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+    text-align: center;
+}
+
+iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+}
+
+/*---RESPONSIVE ADJUSTMENTS---*/
+
+
+@media (max-width: 1024px) {
+    .sidebar-menu-container {
+        width: 150px;
+    }
+
+    .main-content-container {
+        margin-left: 150px;
+        margin-right: 50px;
+    }
+
+    .header-text p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        display: flex;
+    }
+
+    header {
+        position: static;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-text p {
+        font-size: 1.5rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .header-text span {
+        display: block;
+    }
+
+    .sidebar-menu-container {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        order: 2;
+        background-color: #1a1a1a;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar-menu li {
+        margin: 5px;
+        flex-basis: 45%;
+        height: auto;
+    }
+
+    .sidebar-menu a {
+        padding: 10px;
+        height: auto;
+    }
+
+    .sidebar-menu .title {
+        opacity: 1;
+        transform: none;
+        position: relative;
+    }
+
+    
+    .sidebar-menu a:hover {
+        background-color: #4CAF50;
+    }
+
+    .sidebar-menu a:hover .title {
+        color:#4CAF50;
+    }
+
+    .sidebar-menu .hover-content {
+        display: none;
+    }
+
+    .main-content-container {
+        margin: 0;
+        order: 1;
+        padding: 20px;
+    }
+
+    .home-sidebar-container {
+        display: none;
+    }
+}
